@@ -27,9 +27,9 @@ def set_background(image_file):
 # Set your background
 set_background("violet-evergarden-violets-letter-to-major-gilbert.jpg")
 
+st.markdown("<h1 style='color: black;'>Violet Evergarden Cipher Web App</h1>", unsafe_allow_html=True)
+st.markdown("<p style='color: black;'>Convert your text into the alphabet used in the Violet Evergarden anime.</p>", unsafe_allow_html=True)
 
-st.title("Violet Evergarden Cipher Web App")
-st.write("Convert your text into the alphabet used in the Violet Evergarden anime.")
 
 # Load alphabet images
 def load_alphabet_images(folder_path):
@@ -76,7 +76,7 @@ def text_to_cipher_image(input_text, alphabet_images, output_path="output.png"):
     return result_image
 
 # Text Input Section
-st.header("Type Text to Cipher")
+st.markdown("<h3>Type Text to Cipher</h3>", unsafe_allow_html=True)
 user_text = st.text_input("Enter your text here:")
 if user_text:
     result_image = text_to_cipher_image(user_text, alphabet_images)
