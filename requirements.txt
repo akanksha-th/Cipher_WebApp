@@ -1,4 +1,8 @@
 streamlit
-pillow
+Pillow
 pytesseract
 opencv-python
+torch
+torchvision
+numpy
+matplotlib
