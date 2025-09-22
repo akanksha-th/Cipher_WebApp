@@ -25,7 +25,7 @@ def set_background(image_file):
     )
 
 # Set your background
-set_background("violet-evergarden-violets-letter-to-major-gilbert.jpg")
+set_background("app_utils/violet-evergarden-violets-letter-to-major-gilbert.jpg")
 
 st.markdown("<h1 style='color: black;'>Violet Evergarden Cipher Web App</h1>", unsafe_allow_html=True)
 st.markdown("<p style='color: black;'>Convert your text into the alphabet used in the Violet Evergarden anime.</p>", unsafe_allow_html=True)
