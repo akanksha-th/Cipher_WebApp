@@ -86,4 +86,3 @@ if user_text:
     result_image = text_to_cipher_image(user_text, alphabet_images)
     st.image(result_image, caption="Cipher Output")
 
-
