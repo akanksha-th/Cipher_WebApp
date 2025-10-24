@@ -34,7 +34,7 @@ st.markdown("<p style='color: black;'>Convert your text into the alphabet used i
 # Load alphabet images
 def load_alphabet_images(folder_path):
     alphabet_images = {}
-    for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789":
+    for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!{[]()}&#%`^$":
         file_path = os.path.join(folder_path, f"{letter}.png")
         if os.path.exists(file_path):
             alphabet_images[letter] = Image.open(file_path)
@@ -46,8 +46,12 @@ def load_alphabet_images(folder_path):
             alphabet_images[letter] = Image.open(file_path)
         else:
             print(f"Warning: {letter}.png not found!")
-    for letter in " ":
-        file_path = os.path.join(folder_path, "space.png")
+
+    map = {".":"full-stop", ",":"comma", "*":"asterisk", "@":"at-sign", "-":"hyphen", "+":"plus", ":":"colon", ";":"semi-colon",
+            '"':"double_quotes", "'":"single_quote", "?":"question-mark", "|":"line", "\\":"tilted_line", "~":"tilda", 
+            "<":"less-than", ">":"greater-than", "=":"equal-to", "_":"underscore"}
+    for letter in ".,*@-+:;\"'\\?|~<>=_ ":
+        file_path = os.path.join(folder_path, f"{map[letter]}.png")
         if os.path.exists(file_path):
             alphabet_images[letter] = Image.open(file_path)
         else:
