@@ -48,8 +48,8 @@ def load_alphabet_images(folder_path):
             print(f"Warning: {letter}.png not found!")
 
     map = {".":"full-stop", ",":"comma", "*":"asterisk", "@":"at-sign", "-":"hyphen", "+":"plus", ":":"colon", ";":"semi-colon",
-            '"':"double_quotes", "'":"single_quote", "?":"question-mark", "|":"line", "\\":"tilted_line", "~":"tilda", 
-            "<":"less-than", ">":"greater-than", "=":"equal-to", "_":"underscore"}
+            '"':"double_quotes", "'":"single_quote", "?":"question_mark", "|":"line", "\\":"tilted_line", "~":"tilda", 
+            "<":"less-than", ">":"greater-than", "=":"equal-to", "_":"underscore", " ":"space"}
     for letter in ".,*@-+:;\"'\\?|~<>=_ ":
         file_path = os.path.join(folder_path, f"{map[letter]}.png")
         if os.path.exists(file_path):
@@ -58,7 +58,7 @@ def load_alphabet_images(folder_path):
             print(f"Warning: {letter}.png not found!")
     return alphabet_images
 
-alphabet_images = load_alphabet_images("assets/violet_alphabet/")
+alphabet_images = load_alphabet_images(os.path.join(os.getcwd(), "assets/violet_alphabet"))
 
 
 def text_to_cipher_image(input_text, alphabet_images, output_path="output.png"):
